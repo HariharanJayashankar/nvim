@@ -2,6 +2,7 @@
 
 Here contains my init.vim.
 
-I use [Vim Plug](https://github.com/junegunn/vim-plug) for managing neovim plugins.
+I use packer to manage my plugins.
+
 
 
