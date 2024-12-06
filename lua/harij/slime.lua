@@ -1,4 +1,4 @@
-vim.g.slime_target = "neovim"
+vim.g.slime_target = "tmux"
 
 -- disables default bindings
 vim.g.slime_nomappings = 1

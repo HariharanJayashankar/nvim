@@ -45,6 +45,19 @@ require('mason-lspconfig').setup({
 			single_file_support = true
 		    })
 	    end,
+        r_language_server = function()
+		    require('lspconfig').matlab_ls.setup({
+                filetypes={"r"},
+                settings={
+                    r = {
+
+                        lsp = {
+                            diagnostics = false
+                        }
+                    }
+                }
+            })
+        end
 
 },
 })
