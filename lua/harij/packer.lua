@@ -47,4 +47,11 @@ return require('packer').startup(function(use)
     use('tzachar/local-highlight.nvim')
     use('jpalardy/vim-slime')
     use('klafyvel/vim-slime-cells')
+    use {
+        'chipsenkbeil/distant.nvim',
+        branch = 'v0.3',
+        config = function()
+            require('distant'):setup()
+        end
+    }
 end)

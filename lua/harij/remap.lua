@@ -25,3 +25,7 @@ vim.keymap.set("n", "<leader>h", "<C-w>h")
 
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+
+-- copying path
+vim.keymap.set("n", "<leader>cf" ,":let @+=expand('%:p')<CR>")
+vim.keymap.set("n", "<leader>ct" ,":let @+=expand('%:t')<CR>")
