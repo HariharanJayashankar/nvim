@@ -46,9 +46,6 @@ return {
     },
     {('hrsh7th/nvim-cmp')},
     {('tzachar/local-highlight.nvim')},
-    -- {
-    --     'jpalardy/vim-slime',
-    -- },
     {
         'klafyvel/vim-slime-cells',
         dependencies = {'jpalardy/vim-slime'}
