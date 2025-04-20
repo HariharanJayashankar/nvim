@@ -27,9 +27,8 @@ vim.opt.updatetime = 50
 
 vim.opt.clipboard = "unnamedplus"
 
-
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.wrap = true
-vim.opt.shell = "bash"
-
+vim.opt.shell = "zsh"
+vim.opt.cursorline = true
