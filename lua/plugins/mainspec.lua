@@ -46,13 +46,40 @@ return {
     },
     {('hrsh7th/nvim-cmp')},
     {('tzachar/local-highlight.nvim')},
-    {'jpalardy/vim-slime'},
-    {'klafyvel/vim-slime-cells'},
+    -- {
+    --     'jpalardy/vim-slime',
+    -- },
+    {
+        'klafyvel/vim-slime-cells',
+        dependencies = {'jpalardy/vim-slime'},
+        config  = function()
+            
+
+            vim.g.slime_target = "neovim"
+
+            -- disables default bindings
+            vim.g.slime_nomappings = true
+            vim.g.slime_cell_delimiter = "^\\s*##"
+
+            -- send visual selection
+            vim.keymap.set("v", "<leader>s", '<Plug>SlimeRegionSend')
+            -- vim.keymap.set("n", "<leader>s", '<Plug>SlimeMotionSend')
+            vim.keymap.set("n", "<leader>as", '<Plug>SlimeLineSend')
+
+            -- SLime cells
+            vim.keymap.set("n", '<leader>s', '<Plug>SlimeCellsSendAndGoToNext')
+            vim.keymap.set("n", '<leader>j', '<Plug>SlimeCellsNext')
+            vim.keymap.set("n", '<leader>k', '<Plug>SlimeCellsPrev')
+        end
+
+
+    },
      {
         'chipsenkbeil/distant.nvim',
         branch = 'v0.3',
         config = function()
             require('distant'):setup()
         end
-    }
+    },
+  {'akinsho/toggleterm.nvim', version = "*", config = true}
 }

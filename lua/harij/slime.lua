@@ -1,7 +1,7 @@
 vim.g.slime_target = "neovim"
 
 -- disables default bindings
-vim.g.slime_nomappings = 1
+vim.g.slime_nomappings = true
 vim.g.slime_cell_delimiter = "^\\s*##"
 
 -- send visual selection
