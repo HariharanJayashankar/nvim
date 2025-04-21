@@ -3,8 +3,8 @@ require("oil").setup({
     keymaps = {
         ["g?"] = { "actions.show_help", mode = "n" },
         ["<CR>"] = "actions.select",
-        ["<C-s>"] = { "actions.select", opts = { vertical = true } },
-        ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
+        ["<C-s>"] = false,
+        ["<C-h>"] = false,
         ["<C-p>"] = "actions.preview",
         ["<C-t>"] = false,
         ["<C-c>"] = { "actions.close", mode = "n" },
