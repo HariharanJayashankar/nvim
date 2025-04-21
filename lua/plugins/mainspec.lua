@@ -1,15 +1,21 @@
 return {
 
 
-  {
-      'navarasu/onedark.nvim',
-      lazy=false,
-      priority=1000,
-      config = function()
-      -- load the colorscheme here
-          vim.cmd([[colorscheme onedark]])
-        end
-  },
+{
+    "navarasu/onedark.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+        transparent = true,
+},
+    config = function()
+        -- load the colorscheme here
+        vim.cmd([[colorscheme onedark]])
+        vim.api.nvim_set_hl(0, "Normal",  { bg = "none" })
+        vim.api.nvim_set_hl(0, "NormalFloat",  { bg = "none" })
+        vim.api.nvim_set_hl(0, "EndOfBuffer",  { bg = "none" })
+    end
+},
 
    {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.3',
@@ -78,5 +84,16 @@ return {
             require('distant'):setup()
         end
     },
-  {'akinsho/toggleterm.nvim', version = "*", config = true}
+  {'akinsho/toggleterm.nvim', version = "*", config = true},
+  {
+      'stevearc/oil.nvim',
+      ---@module 'oil'
+      ---@type oil.SetupOpts
+      opts = {},
+      -- Optional dependencies
+      dependencies = { { "echasnovski/mini.icons", opts = {} } },
+      -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+      -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+      lazy = false,
+  }
 }
